@@ -1,18 +1,18 @@
+# Imports
 import mysql.connector
 from flask import Flask, render_template, redirect, request, url_for
+from db.functions import CheckUser
 
-# Database 
+
+# Database / Variables
 
 connection = mysql.connector.connect(
-    host='localhost',
-    database='clubs',
-    user='root',
-    password='')
+        host='localhost',
+        database='clubs',
+        user='root',
+        password='')
 
-#cursor = connection.cursor()
-#cursor.close()
-#connection.close()
-
+cursor = connection.cursor()
 
 # Flask
 app = Flask(__name__)
@@ -23,7 +23,12 @@ def login():
     if request.method == "POST":
         username = request.form['USERNAME']
         password = request.form['PASSWORD']
-        return redirect(url_for("main"))
+        userInDatabse = CheckUser(username, password, cursor)
+        
+        if userInDatabse == True:
+            return redirect(url_for("main"))
+        else:
+            return redirect(url_for("login"))
     else:
         return render_template("login.html")
 
