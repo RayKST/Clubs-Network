@@ -11,3 +11,17 @@ form {
     display: grid;
     justify-items: center;
 }
+
+input {
+    text-align: center;
+    border-radius: 20px;
+    border-color: black;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+button {
+    border-radius: 20px;
+    border-color: black;
+    padding: 20px;
+}
