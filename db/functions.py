@@ -14,3 +14,17 @@ def CheckUser (username : str, password : str, cursor):
 
     except:
         return False        # Return false if username isn't in database
+
+
+def CreateUser (username : str, password : str, cursor, con):
+    '''
+        Function to insert a new user to database.
+    '''
+
+    try:
+        cursor.execute(f"INSERT INTO User (name, password) VALUES ('{username}', '{password}')")
+        con.commit()
+        return True         # Commit changes and return True
+        
+    except:
+        return False        # Return false if username and password are invalid values
