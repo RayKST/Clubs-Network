@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/form-template.css">
-    <title>Clubs Login</title>
-</head>
-
-<body>
-    <div class="form-login">
-        <h1> Welcome To Clubs!!!</h1>
-        <form method="post">
-            <input type="text" name="USERNAME" placeholder="Insert Username" required>
-            <input type="password" name="PASSWORD" placeholder="Insert User Password" required>
-            <button type="submit"> Login </button>
-        </form>
-        <a href="create-user"> Don't have an account yet? Make One!!</a>
-    </div>
-</body>
-</html>
+{% extends "forms.html" %}
+{% block title %}Clubs Login{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{ % block form %} { % endblock %}
+{% block h1 %}Welcome To Clubs!!!{% endblock %}
+{% block button %}Login{% endblock %}

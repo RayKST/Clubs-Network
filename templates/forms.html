@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/form-template.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div>
+        {% block form %}
+        <h1> {% block h1 %} {% endblock %}</h1>
+        <form method="post">
+            <input type="text" name="USERNAME" placeholder="Insert Username" required>
+            <input type="password" name="PASSWORD" placeholder="Insert User Password" required>
+            <button type="submit"> {% block button %} {% endblock %} </button>
+        </form>
+        {% block a %} 
+        <a href="create-user"> Don't have an account yet? Make One!!</a>  
+        {% endblock %}
+        {% endblock %}
+    </div>
+</body>
+</html>
